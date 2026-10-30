@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa da Música | Instrumentos para rock e muito mais</title>
+<meta name="description" content="Casa da Música: guitarras, baixos, baterias, teclados, microfones e equipamentos de áudio para músicos de todos os níveis.">
+<meta name="theme-color" content="#150a0e">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#150a0e;--panel:#210f16;--ink:#f0e6df;--muted:#b09a9a;--line:rgba(240,230,223,.15);--accent:#c9a45c;--red:#b3283c;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost","Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font:400 1.05rem/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}button{font:inherit;color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.label{font:500 .75rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+em{font-style:italic;color:var(--accent)}
+section{padding:5rem 0}
+h2{font:500 clamp(2.2rem,5vw,3.4rem)/1.05 var(--serif);margin:.6rem 0 1.8rem}
+
+header{position:sticky;top:0;z-index:10;background:rgba(21,10,14,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:66px;gap:1rem}
+.logo{font:italic 500 1.5rem var(--serif);text-decoration:none;white-space:nowrap}
+nav ul{display:flex;gap:1.6rem;list-style:none}
+nav a{font:500 .72rem var(--sans);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.cartbtn{background:none;border:1px solid var(--line);padding:.5rem 1rem;cursor:pointer;font:500 .72rem var(--sans);letter-spacing:.18em;text-transform:uppercase}
+.cartbtn b{color:var(--accent);font-weight:500;margin-left:.4rem}
+
+.hero{padding:6rem 0 5.5rem}
+.hero h1{font:500 clamp(3rem,9vw,6.4rem)/1 var(--serif);letter-spacing:-.015em;max-width:13ch;margin:1.2rem 0 1.6rem}
+.hero p{color:var(--muted);font-size:1.15rem;max-width:42ch;margin-bottom:2.2rem}
+.btn{display:inline-block;padding:.9rem 2rem;border:1px solid var(--accent);background:none;cursor:pointer;text-decoration:none;font:500 .76rem var(--sans);letter-spacing:.2em;text-transform:uppercase;transition:background .25s,color .25s}
+.btn:hover,.btn.fill{background:var(--accent);color:#1d1305}
+.btn.fill:hover{background:transparent;color:var(--ink)}
+.in{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.in:nth-child(2){animation-delay:.1s}.in:nth-child(3){animation-delay:.2s}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+.about{background:var(--panel);border-block:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem}
+.about p{color:var(--muted)}.about p+p{margin-top:1rem}
+
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;list-style:none}
+.cat img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--panel);border:1px solid var(--line);filter:grayscale(.7) brightness(.85);transition:filter .5s}
+.cat:hover img{filter:none}
+.cat h3{font:500 1.5rem/1.2 var(--serif);margin:.8rem 0 .2rem}
+.cat p{color:var(--muted);font-size:.93rem;line-height:1.5}
+
+.feat{background:var(--panel);border-block:1px solid var(--line)}
+.prod{display:grid;grid-template-columns:1fr auto auto;gap:1.5rem;align-items:center;padding:1.3rem 0;border-top:1px solid var(--line)}
+.prod:last-child{border-bottom:1px solid var(--line)}
+.prod h3{font:500 1.7rem/1.15 var(--serif)}
+.prod p{color:var(--muted);font-size:.96rem}
+.price{font:500 1.5rem var(--serif);color:var(--accent);white-space:nowrap}
+.add{background:none;border:1px solid var(--line);padding:.5rem 1rem;font:500 .7rem var(--sans);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.add:hover{border-color:var(--accent);background:var(--accent);color:#1d1305}
+
+.perks{list-style:none;columns:2;column-gap:3rem}
+.perks li{break-inside:avoid;padding:1.1rem 0;border-top:1px solid var(--line);font:500 1.5rem var(--serif)}
+.perks li::before{content:"✦";color:var(--red);font-size:.8rem;margin-right:.9rem;vertical-align:.2em}
+
+.social{display:flex;gap:1rem;flex-wrap:wrap;margin:1.6rem 0 1rem}
+address{font-style:normal;color:var(--muted)}
+address strong{display:block;font:500 1.6rem var(--serif);color:var(--ink)}
+footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+footer .lema{font:italic 400 1.2rem var(--serif);color:var(--ink)}
+
+dialog{margin:auto;width:min(480px,92vw);background:var(--panel);color:var(--ink);border:1px solid var(--line);padding:1.8rem}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+dialog h2{font-size:2rem;margin:0 0 1rem}
+.line{display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;padding:.8rem 0;border-top:1px solid var(--line)}
+.qty{display:flex;align-items:center;gap:.6rem;grid-column:1/-1}
+.qty button{width:30px;height:30px;background:none;border:1px solid var(--line);cursor:pointer}
+.qty button:hover{border-color:var(--accent)}
+.total{display:flex;justify-content:space-between;font:500 1.5rem var(--serif);padding:1rem 0;border-top:1px solid var(--line)}
+.empty{color:var(--muted);padding:1rem 0}
+.actions{display:flex;gap:.8rem;flex-wrap:wrap}
+
+@media (max-width:860px){
+  section{padding:3.5rem 0}.hero{padding:4rem 0}
+  .cats{grid-template-columns:1fr 1fr;gap:1.2rem}
+  .two{grid-template-columns:1fr;gap:1.5rem}
+  .perks{columns:1}
+  .prod{grid-template-columns:1fr auto}.prod>div{grid-column:1/-1}
+  nav{display:none}
+}
+@media (max-width:420px){.cats{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#inicio">Casa da Música</a>
+    <nav aria-label="Principal"><ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#categorias">Categorias</a></li>
+      <li><a href="#destaques">Destaques</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul></nav>
+    <button class="cartbtn" id="open-cart" aria-label="Abrir carrinho">Carrinho<b id="count">0</b></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <span class="label in">Instrumentos musicais</span>
+    <h1 class="in">Os melhores instrumentos para <em>sua</em> música.</h1>
+    <div class="in">
+      <p>Guitarras, baixos, baterias e equipamentos de áudio, escolhidos com cuidado para músicos de todos os níveis.</p>
+      <a class="btn fill" href="#categorias">Ver categorias</a>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="wrap two">
+    <div>
+      <span class="label">Sobre nós</span>
+      <h2>Nascemos da paixão pelo <em>rock</em>.</h2>
+    </div>
+    <div>
+      <p>A Casa da Música nasceu da paixão pela música e pela cultura do rock. Nosso objetivo é oferecer instrumentos de qualidade para músicos iniciantes, amadores e profissionais que desejam transformar inspiração em som.</p>
+      <p>Aqui você encontra guitarras, baixos, baterias, teclados e diversos equipamentos de áudio cuidadosamente selecionados para garantir desempenho, qualidade e personalidade em cada nota.</p>
+      <p>Mais do que vender instrumentos, buscamos incentivar a criatividade e ajudar músicos a encontrarem sua própria identidade sonora.</p>
+    </div>
+  </div>
+</section>
+
+<section id="categorias">
+  <div class="wrap">
+    <span class="label">Categorias</span>
+    <h2>Encontre o seu som</h2>
+    <ul class="cats">
+      <li class="cat"><img src="guitarra.jpg" alt="Guitarra elétrica" loading="lazy"><h3>Guitarras</h3><p>Modelos para rock, blues, metal e diversos outros estilos.</p></li>
+      <li class="cat"><img src="baixo.jpg" alt="Baixo elétrico" loading="lazy"><h3>Baixos</h3><p>Graves marcantes para completar qualquer banda.</p></li>
+      <li class="cat"><img src="bateria.jpg" alt="Bateria" loading="lazy"><h3>Baterias</h3><p>Kits completos para estudo, ensaios e apresentações.</p></li>
+      <li class="cat"><img src="teclado.jpg" alt="Teclado musical" loading="lazy"><h3>Teclados</h3><p>Equipamentos versáteis para iniciantes e experientes.</p></li>
+      <li class="cat"><img src="microfone.jpg" alt="Microfone" loading="lazy"><h3>Microfones</h3><p>Qualidade de áudio para gravações, lives e shows.</p></li>
+      <li class="cat"><img src="amplificador.jpg" alt="Amplificador" loading="lazy"><h3>Amplificadores</h3><p>Potência e definição sonora para elevar seu desempenho.</p></li>
+      <li class="cat"><img src="audio.jpg" alt="Equipamentos de áudio" loading="lazy"><h3>Equipamentos de áudio</h3><p>Mesas de som, interfaces e acessórios para produção.</p></li>
+      <li class="cat"><img src="classicos.jpg" alt="Instrumentos clássicos" loading="lazy"><h3>Clássicos</h3><p>Violinos, violoncelos e outros instrumentos de orquestra.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="feat" id="destaques">
+  <div class="wrap">
+    <span class="label">Destaques</span>
+    <h2>Instrumentos em destaque</h2>
+    <div id="prods"></div>
+  </div>
+</section>
+
+<section id="porque">
+  <div class="wrap two">
+    <div>
+      <span class="label">Por que nós</span>
+      <h2>Por que escolher a <em>Casa</em>?</h2>
+    </div>
+    <ul class="perks">
+      <li>Produtos selecionados</li>
+      <li>Atendimento especializado</li>
+      <li>Garantia em todos os instrumentos</li>
+      <li>Entrega para todo o Brasil</li>
+      <li>Suporte para músicos iniciantes</li>
+    </ul>
+  </div>
+</section>
+
+<section class="feat" id="contato">
+  <div class="wrap two">
+    <div>
+      <span class="label">Contato</span>
+      <h2>Fale com a gente</h2>
+    </div>
+    <div>
+      <address><strong>Rua das Cordas, 666</strong>Centro</address>
+      <div class="social">
+        <a class="btn" href="tel:+5511977777777">Telefone</a>
+        <a class="btn" href="mailto:contato@casadamusica.com">E-mail</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Rua+das+Cordas+666+Centro">Mapa</a>
+      </div>
+      <address>(11) 97777-7777<br>contato@casadamusica.com</address>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="lema">O som da sua próxima lenda.</span>
+    <span>© 2026 Casa da Música · Desenvolvido por <a href="https://thyego17.github.io/Portif-lio/">Thyego</a></span>
+  </div>
+</footer>
+
+<dialog id="cart" aria-labelledby="cart-title">
+  <h2 id="cart-title">Seu carrinho</h2>
+  <div id="cart-body"></div>
+  <div class="actions">
+    <button class="btn fill" id="checkout">Finalizar pedido</button>
+    <button class="btn" id="close-cart">Continuar vendo</button>
+  </div>
+</dialog>
+
+<script>
+const P=[
+ ["Guitarra Elétrica","Ideal para rock e metal",1599.90],
+ ["Baixo Elétrico","Graves poderosos e definidos",1899.90],
+ ["Bateria Acústica","Kit completo para performances",3499.90],
+ ["Teclado Digital","Sons versáteis para qualquer estilo",2299.90],
+ ["Amplificador","Potência e qualidade sonora",1299.90]
+];
+const brl=n=>n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+let cart={};
+document.getElementById("prods").innerHTML=P.map((p,i)=>`<div class="prod"><div><h3>${p[0]}</h3><p>${p[1]}</p></div><span class="price">${brl(p[2])}</span><button class="add" data-i="${i}" aria-label="Adicionar ${p[0]} ao carrinho">Adicionar</button></div>`).join("");
+document.getElementById("prods").addEventListener("click",e=>{
+  const b=e.target.closest(".add");if(!b)return;
+  cart[b.dataset.i]=(cart[b.dataset.i]||0)+1;update();
+  b.textContent="Adicionado";setTimeout(()=>b.textContent="Adicionar",1000);
+});
+const dlg=document.getElementById("cart"),body=document.getElementById("cart-body");
+function update(){
+  const ids=Object.keys(cart);
+  document.getElementById("count").textContent=ids.reduce((s,i)=>s+cart[i],0);
+  if(!ids.length){body.innerHTML='<p class="empty">Seu carrinho está vazio.</p>';return}
+  const total=ids.reduce((s,i)=>s+P[i][2]*cart[i],0);
+  body.innerHTML=ids.map(i=>`<div class="line"><strong>${P[i][0]}</strong><b>${brl(P[i][2]*cart[i])}</b><div class="qty"><button data-d="-1" data-i="${i}" aria-label="Diminuir">−</button><span>${cart[i]}</span><button data-d="1" data-i="${i}" aria-label="Aumentar">+</button></div></div>`).join("")+`<div class="total"><span>Total</span><span>${brl(total)}</span></div>`;
+}
+body.addEventListener("click",e=>{
+  const b=e.target.closest("[data-d]");if(!b)return;
+  const i=b.dataset.i;cart[i]+=+b.dataset.d;if(cart[i]<1)delete cart[i];update();
+});
+document.getElementById("open-cart").addEventListener("click",()=>dlg.showModal());
+document.getElementById("close-cart").addEventListener("click",()=>dlg.close());
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+document.getElementById("checkout").addEventListener("click",()=>{
+  if(!Object.keys(cart).length)return;
+  body.innerHTML='<p class="empty">Este é um projeto de demonstração, então o pedido não é enviado de verdade. Obrigado por testar!</p>';
+  cart={};document.getElementById("count").textContent=0;
+});
+update();
+</script>
+</body>
+</html>
